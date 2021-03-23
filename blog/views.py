@@ -32,7 +32,7 @@ def category_page(request, slug):
     else:
         category = Category.objects.get(slug=slug)
         post_list = Post.objects.filter(category=category)
-        
+
     return render(
         request,
         'blog/post_list.html',
