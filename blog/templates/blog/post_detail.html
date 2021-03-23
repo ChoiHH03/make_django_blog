@@ -3,7 +3,6 @@
 {% block head_title %}
   {{ post.title }} - Blog
 {% endblock %}
-
 {% block main_area %}
 
         <!-- Title -->
@@ -34,7 +33,13 @@
 
         <!-- Post Content -->
         <div id="post-area">
-          <p>{{ post.content }}</p>
+            {% if post.category %}
+                <span class="badge badge-secondary float-right">{{ post.category }}</span>
+            {% else %}
+                <span class="badge badge-secondary float-right">미분류</span>
+            {% endif %}
+
+            <p>{{ post.content }}</p>
 
           {% if post.file_upload %}
             <a class="btn btn-outline-dark" href="{{ post.file_upload.url }}" role="button" download>
