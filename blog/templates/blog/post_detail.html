@@ -26,7 +26,8 @@
         {% if post.head_image %}
           <img class="img-fluid rounded" src="{{ post.head_image.url }}" alt="{{ post.title }} head_image">
         {% else %}
-          <img class="img-fluid rounded" src="http://picsum.photos/seed/{{p.id}}/800/200" alt="random_image">
+          <img class="img-fluid rounded" src="http://picsum.photos/seed/{{post.id}}/800/200" alt="random_image">
+            <span></span>
         {% endif %}
 
         <hr>
