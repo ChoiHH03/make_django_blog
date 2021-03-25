@@ -44,7 +44,7 @@
                 <span class="badge badge-secondary float-right">미분류</span>
             {% endif %}
 
-            <p>{{ post.content }}</p>
+            <p>{{ post.get_content_markdown | safe }}</p>
 
             {% if post.tags.exists %}
                 <i class="fas fa-tags"></i>
