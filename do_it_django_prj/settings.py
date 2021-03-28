@@ -28,7 +28,7 @@ DEBUG = int(os.environ.get('DEBUG', 1))
 if os.environ.get('DJANGO_ALLOWED_HOSTS'):
     ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS').split(' ')
 else:
-    ALLOWED_HOSTS = []
+    ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -139,7 +139,7 @@ USE_TZ = False
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, '_static')
 
-MDEIA_URL = '/media/'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, '_media')
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
