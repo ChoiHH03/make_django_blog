@@ -29,14 +29,14 @@ class TestView(TestCase):
         self.post_001.tags.add(self.tag_hello)
 
         self.post_002 = Post.objects.create(
-            title='두 번쩨 포스트입니다,',
+            title='두 번째 포스트입니다,',
             content='1등이 전부는 아니잖아요?',
             category=self.category_music,
             author=self.user_obama
         )
 
         self.post_003 = Post.objects.create(
-            title='두 번쩨 포스트입니다,',
+            title='세 번쩨 포스트입니다,',
             content='category가 없을 수도 있죠',
             author=self.user_obama
         )
@@ -430,7 +430,7 @@ class TestView(TestCase):
             author=self.user_trump
         )
 
-        response = self.client.get('/blog/search/파이썬')
+        response = self.client.get('/blog/search/파이썬/')
         self.assertEqual(response.status_code, 200)
         soup = BeautifulSoup(response.content, 'html.parser')
 
